@@ -1,0 +1,252 @@
+/* Authentication Page Styles */
+
+:root {
+    --primary-color: #1A237E;
+    --secondary-color: #FF6F00;
+    --accent-color: #00C853;
+    --light-bg: #F0F2F5;
+    --dark-text: #212121;
+    --muted-text: #757575;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #283593 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.auth-container.full-height {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-box {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brand-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.brand-title i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.auth-logo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #e9ecef;
+}
+
+.nav-tabs .nav-link {
+    color: var(--muted-text);
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--secondary-color);
+    background-color: transparent;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(26, 35, 126, 0.15);
+}
+
+.input-group-text {
+    background: transparent;
+    border: 2px solid #e0e0e0;
+    color: var(--secondary-color);
+    border-right: none;
+}
+
+.input-group .form-control {
+    border-left: none;
+}
+
+.input-group .form-control:focus + .input-group-text,
+.input-group-text + .form-control:focus {
+    border-color: var(--primary-color);
+}
+
+.btn-primary,
+.btn-success {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0d1853;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 35, 126, 0.3);
+}
+
+.btn-success {
+    background-color: var(--accent-color);
+}
+
+.btn-success:hover {
+    background-color: #00a03c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 200, 83, 0.3);
+}
+
+.btn-lg {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+/* Alert Styles */
+#loginAlert,
+#registerAlert {
+    margin-bottom: 20px;
+}
+
+.alert {
+    border-radius: 8px;
+    border: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background-color: #E8F5E9;
+    color: #1B5E20;
+}
+
+.alert-danger {
+    background-color: #FFEBEE;
+    color: #B71C1C;
+}
+
+/* Small text and links */
+small {
+    color: var(--muted-text);
+    display: block;
+    margin-top: 5px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .auth-box {
+        padding: 30px 20px;
+    }
+
+    .brand-title {
+        font-size: 1.5rem;
+    }
+
+    .nav-tabs {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .nav-tabs .nav-item {
+        width: 100%;
+    }
+
+    .nav-tabs .nav-link {
+        text-align: center;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+        padding-left: 0;
+    }
+
+    .nav-tabs .nav-link.active {
+        border-left-color: var(--secondary-color);
+    }
+
+    .nav-tabs .nav-link:hover {
+        border-left-color: var(--secondary-color);
+    }
+}
