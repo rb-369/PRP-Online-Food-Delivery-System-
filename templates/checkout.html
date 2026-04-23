@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout - FoodHub{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/checkout.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <!-- Order Summary -->
+        <div class="col-lg-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Order Summary</h5>
+                </div>
+                <div class="card-body">
+                    <div id="orderItemsList"></div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h6>Subtotal:</h6>
+                        </div>
+                        <div class="col-6">
+                            <h6 id="subtotal">$0.00</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h6>Tax (10%):</h6>
+                        </div>
+                        <div class="col-6">
+                            <h6 id="tax">$0.00</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h6>Delivery Fee:</h6>
+                        </div>
+                        <div class="col-6">
+                            <h6 id="deliveryFee">$2.00</h6>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6 text-end">
+                            <h5 class="fw-bold">Total:</h5>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="fw-bold text-success" id="orderTotal">$0.00</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delivery Information -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Delivery Information</h5>
+                </div>
+                <div class="card-body">
+                    <form id="checkoutForm">
+                        <div class="mb-3">
+                            <label for="savedAddressSelect" class="form-label">Saved Addresses</label>
+                            <div class="d-flex gap-2">
+                                <select class="form-select" id="savedAddressSelect">
+                                    <option value="">Select saved address</option>
+                                </select>
+                                <button type="button" class="btn btn-outline-danger" id="deleteAddressBtn" title="Delete selected address">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            <small class="text-muted">One-click address selection from your address book.</small>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label for="flatNo" class="form-label">Flat No.</label>
+                                <input type="text" class="form-control" id="flatNo" placeholder="e.g. A-1204">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="buildingName" class="form-label">Building Name</label>
+                                <input type="text" class="form-control" id="buildingName" placeholder="e.g. Rose Residency">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="deliveryAddress" class="form-label">Delivery Address</label>
+                            <div class="d-flex justify-content-end mb-2">
+                                <button type="button" class="btn btn-outline-primary btn-sm" id="useCurrentLocationBtn">
+                                    <i class="fas fa-location-crosshairs"></i> Use Current Location
+                                </button>
+                            </div>
+                            <textarea 
+                                class="form-control" 
+                                id="deliveryAddress" 
+                                rows="3" 
+                                placeholder="Enter your delivery address" 
+                                required
+                            ></textarea>
+                            <small id="locationStatus" class="text-muted d-block mt-2"></small>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-7 mb-3">
+                                <div class="form-check mt-4">
+                                    <input class="form-check-input" type="checkbox" id="saveAddressCheck">
+                                    <label class="form-check-label" for="saveAddressCheck">
+                                        Save this address to address book
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-5 mb-3">
+                                <label for="saveAddressLabel" class="form-label">Label</label>
+                                <select id="saveAddressLabel" class="form-select">
+                                    <option value="Home">Home</option>
+                                    <option value="Work">Work</option>
+                                    <option value="Other" selected>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                class="form-control" 
+                                id="phoneNumber" 
+                                placeholder="Your phone number" 
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label">Payment Method</label>
+                            <select class="form-select" id="paymentMethod" required>
+                                <option value="">Select a payment method</option>
+                                <option value="card">Credit/Debit Card</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="cod">Cash on Delivery</option>
+                            </select>
+                        </div>
+
+                        <div id="orderAlert"></div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg fw-bold">
+                                <i class="fas fa-check-circle"></i> Place Order
+                            </button>
+                            <a href="/menu" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left"></i> Continue Shopping
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/checkout.js') }}"></script>
+{% endblock %}
