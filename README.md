@@ -51,7 +51,7 @@ Here is a visual tour of the application's core interfaces and user workflows.
 ![Menu Page](screenshots/online-food-delivery-screenshot-02.png)
 *Browsing the expansive food menu with rich item cards.*
 
-![Menu Search & Filters](screenshots/Screenshot 2026-04-23 153902.png)
+![Menu Search & Filters](screenshots/online-food-delivery-screenshot-03.png)
 *Using advanced search and category filters to find the perfect meal.*
 
 ### 3. Shopping Cart
