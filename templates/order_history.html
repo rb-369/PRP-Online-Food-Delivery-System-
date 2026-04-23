@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Order History - FoodHub{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/orders.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="mb-3">
+                <i class="fas fa-receipt"></i> My Orders
+            </h2>
+        </div>
+    </div>
+
+    <div id="ordersContainer" class="row g-4">
+        <!-- Orders will be loaded here -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="text-center py-5" style="display: none;">
+        <i class="fas fa-box-open" style="font-size: 48px; color: #ccc;"></i>
+        <h3 class="mt-3 text-muted">No orders yet</h3>
+        <p class="text-muted">Start ordering delicious food now!</p>
+        <a href="/menu" class="btn btn-primary mt-3">
+            <i class="fas fa-utensils"></i> Browse Menu
+        </a>
+    </div>
+</div>
+
+<!-- Order Details Modal -->
+<div class="modal fade" id="orderDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="orderDetailsContent">
+                <!-- Order details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="reviewModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Rate Order</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="reviewAlert"></div>
+                <input type="hidden" id="reviewOrderId">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Overall Order Rating</label>
+                    <select id="orderRating" class="form-select">
+                        <option value="">Select rating</option>
+                        <option value="5">5 - Excellent</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Average</option>
+                        <option value="1">1 - Poor</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Order Comment</label>
+                    <textarea id="orderComment" class="form-control" rows="2" placeholder="Share your experience"></textarea>
+                </div>
+                <h6 class="mb-2">Rate Items</h6>
+                <div id="itemReviewList"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="submitReviewBtn" onclick="submitOrderReview()">Submit Review</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/orders.js') }}"></script>
+{% endblock %}
