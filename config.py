@@ -1,5 +1,5 @@
 """
-Configuration and Constants for Flask Application
+Configuration and Constants for Flask Application Project
 """
 
 # SQLite database configuration
