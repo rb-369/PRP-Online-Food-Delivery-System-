@@ -1,5 +1,5 @@
 """
-Flask Backend for Online Food Delivery Application
+Flask Backend for Online Food Delivery Application Project
 """
 
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
