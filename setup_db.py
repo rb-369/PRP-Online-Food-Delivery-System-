@@ -1,5 +1,5 @@
 """
-Database Setup Script for Food Ordering System (SQLite)
+Database Setup Script for Food Ordering System Project(SQLite)
 Creates required tables and seeds initial data.
 """
 
