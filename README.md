@@ -96,7 +96,13 @@ Here is a visual tour of the application's core interfaces and user workflows.
 
 Because visualizing the flow is important, please view the complete application walkthrough video below:
 
-[▶️ Click here to view Project Demo Video](screenshots/demo_video.mp4)
+[▶️ Click here to view Project Demo Video for User Login/Register Demo](https://youtu.be/y6udL2AVFlU?si=UKynaOo9dY6vrAgZ)
+
+[▶️ Click here to view Project Demo Video for User Order Demo](https://youtu.be/T-9rFxBMz8w?si=Li8yh1KTYahX5Q9w)
+
+[▶️ Click here to view Project Demo Video for Admin Panel Demo](https://youtu.be/aVW85N7g_bE?si=WWyNFwcsZLWSfEGF)
+
+[▶️ Click here to view Project Demo Video for Overall Admin Demo](https://youtu.be/aVW85N7g_bE?si=WWyNFwcsZLWSfEGF)
 
 ---
 
