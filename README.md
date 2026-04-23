@@ -1,346 +1,187 @@
-# FoodHub - Online Food Delivery Web Application
+# 🍔 FoodHub - Online Food Delivery System
 
-A modern, fully-featured online food delivery application built with **Flask** backend and responsive **HTML/CSS/JavaScript** frontend.
+Welcome to **FoodHub**, a modern, full-stack web application designed for seamless online food ordering. Built with Python, Flask, and SQLite on the backend, and powered by responsive HTML5, CSS3, JavaScript, and Bootstrap 5 on the frontend. 
 
-**Converted from the original Tkinter desktop application to a professional web-based platform.**
+FoodHub aims to provide a premium user experience for customers to browse menus, manage their carts, place orders, and track their history, while giving administrators powerful tools to manage the catalog and moderate user reviews.
 
-## 🚀 Features
+---
 
-### User Features
-- ✅ **User Registration & Login** - Secure authentication with password hashing
-- ✅ **Food Menu Display** - Browse all available food items with descriptions and prices
-- ✅ **Search Functionality** - Real-time search through menu items
-- ✅ **Shopping Cart** - Add/remove items, update quantities
-- ✅ **Checkout** - Complete order with delivery address and phone number
-- ✅ **Order History** - View past orders and their details
-- ✅ **Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
-- ✅ **Modern UI** - Clean, attractive, and professional interface
+## 📚 Academic Information
+- **Subject Code:** PRP230807
+- **Subject Name:** Programming in Python
+- **Topic:** Online Food Delivery System
 
-### Technical Features
-- 🔒 **Secure Password Hashing** - Werkzeug security for user passwords
-- 📦 **RESTful API** - Backend API endpoints for all operations
-- 💾 **SQLite Database** - Persistent storage for users, orders, and menu items
-- 🎨 **Bootstrap 5** - Responsive CSS framework
-- ⚡ **Real-time Updates** - Dynamic cart updates with fetch API
-- 📱 **Mobile Optimized** - Touch-friendly interface
+## 👥 Team Members
+- **B002** (Rudra Babar)
+- **B010** (Aryan Desale)
+- **B030** (Shishir Bhavsar)
+
+---
+
+## ✨ Core Features
+
+### For Customers (Users)
+- **Secure Authentication:** User registration, login, and robust session-based access control with password hashing (`Werkzeug.security`).
+- **Smart Menu Browsing:** Dynamic menu with advanced search functionality, category filtering, veg/non-veg toggles, and price range sorting.
+- **Shopping Cart Management:** Interactive sliding cart to add items, update quantities, remove items, and view price calculations in real-time.
+- **Seamless Checkout:** A clean checkout workflow capturing delivery addresses, contact numbers, and providing the ability to save addresses for future use.
+- **Order History & Tracking:** Users can view their past orders, check fulfillment statuses, and see detailed item breakdowns.
+- **Review System:** Customers can rate their overall experience and leave specific feedback/comments on individual food items.
+
+### For Administrators
+- **Admin Dashboard:** A dedicated, secure interface for managing the entire platform operations.
+- **Menu Management:** Perform full CRUD operations (Create, Read, Update, Delete) on food items. Upload images, set prices, and categorize dishes dynamically.
+- **Review Moderation:** Approve or reject customer reviews to ensure quality control and maintain high platform standards.
+
+---
+
+## 📸 Visual Walkthrough
+
+Here is a visual tour of the application's core interfaces and user workflows.
+
+### 1. Authentication
+*Users can create accounts and securely log into the system.*
+*(Placeholder ready for Login/Register Screenshot)*
+![Login Page](screenshots/online-food-delivery-screenshot-02.png) 
+*(Note: Displaying Menu as fallback. Please add a dedicated login screenshot to the folder if needed)*
+
+### 2. Menu & Browsing
+*Customers can browse a variety of delicious items, filter by Veg/Non-Veg, and search for specific cravings.*
+![Menu Page](screenshots/online-food-delivery-screenshot-02.png)
+*Browsing the expansive food menu with rich item cards.*
+
+![Menu Search & Filters](screenshots/online-food-delivery-screenshot-03.png)
+*Using advanced search and category filters to find the perfect meal.*
+
+### 3. Shopping Cart
+*An interactive sliding cart lets users manage their selected items before proceeding to checkout.*
+![Shopping Cart](screenshots/online-food-delivery-screenshot-05.png)
+
+### 4. Checkout Process
+*A clean and intuitive checkout page where users can input delivery details, use saved addresses, or fetch their current location.*
+![Checkout Page](screenshots/online-food-delivery-screenshot-06.png)
+*Entering delivery information and reviewing the order summary.*
+
+![Location Prompt](screenshots/online-food-delivery-screenshot-07.png)
+*Browser prompt integration for current location.*
+
+### 5. Order Confirmation & History
+*Users get instant feedback upon placing an order and can view all past activities.*
+![Order Confirmed](screenshots/online-food-delivery-screenshot-08.png)
+*Order successfully placed popup.*
+
+![Order History](screenshots/online-food-delivery-screenshot-01.png)
+*Viewing past orders and current statuses on the History page.*
+
+### 6. Ratings & Reviews
+*Customers can review their prior orders to help the community.*
+![Rate Order](screenshots/online-food-delivery-screenshot-09.png)
+*Leaving a star rating and comment for ordered food.*
+
+### 7. Administrator Panel
+*Administrators have full administrative control over the catalog and incoming reviews.*
+![Admin Dashboard - Menu](screenshots/online-food-delivery-screenshot-10.png)
+*Admin view for tracking and managing all food items on the platform.*
+
+![Admin Review Moderation](screenshots/online-food-delivery-screenshot-11.png)
+*Moderating incoming user reviews (Approve/Reject).*
+
+![Admin Add Item](screenshots/online-food-delivery-screenshot-12.png)
+*Adding a new food item to the live database.*
+
+---
+
+## 🎥 Project Demo Video
+
+Because visualizing the flow is important, please view the complete application walkthrough video below:
+
+[▶️ Click here to view Project Demo Video](docs/video/demo.mp4)
+
+*(Note: Ensure `docs/video/demo.mp4` contains your recorded project showcase)*
+
+---
+
+## 🛠️ Technology Stack
+
+**Backend Architecture:**
+- **Python 3.x:** Core server-side programming language.
+- **Flask:** Lightweight, highly flexible WSGI web application framework.
+- **Werkzeug:** Utility library handling request parsing and robust password hashing algorithms.
+- **SQLite3:** Relational database management system chosen for lightweight, file-based data storage and easy setup.
+
+**Frontend Interface:**
+- **HTML5:** Semantic document structure.
+- **CSS3:** Custom styling implementing a premium, modern aesthetic with careful color theory.
+- **JavaScript (Vanilla):** Dynamic DOM manipulation, modal handling, and asynchronous API calls (AJAX/Fetch).
+- **Bootstrap 5:** Utility-first CSS framework facilitating rapid, mobile-first responsive design.
+
+---
 
 ## 📁 Project Structure
 
-```
-py-project/
-├── app.py                      # Main Flask application
-├── config.py                   # Configuration settings
-├── setup_db.py                 # Database setup script
-├── requirements.txt            # Python dependencies
-│
-├── templates/                  # HTML Templates
-│   ├── base.html              # Base template with navbar
-│   ├── login.html             # Login/Register page
-│   ├── register.html          # Standalone register page
-│   ├── menu.html              # Food menu display
-│   ├── checkout.html          # Order checkout
-│   ├── order_history.html     # Order history page
-│   └── 404.html               # Error page
-│
-├── static/                     # Static files (CSS, JS, Images)
-│   ├── css/
-│   │   ├── style.css          # Main stylesheet
-│   │   ├── auth.css           # Authentication page styles
-│   │   ├── menu.css           # Menu page styles
-│   │   ├── checkout.css       # Checkout page styles
-│   │   └── orders.css         # Order history styles
-│   │
-│   └── js/
-│       ├── main.js            # Cart management & common functions
-│       ├── auth.js            # Login/register logic
-│       ├── menu.js            # Menu & search functionality
-│       ├── checkout.js        # Checkout logic
-│       └── orders.js          # Order history logic
-│
-├── images/                     # Food images (optional)
-└── README.md                   # This file
+```text
+.
+├── app.py                # Main Flask application and route definitions
+├── config.py             # Configuration constants and UI theme variables
+├── setup_db.py           # Database initialization and seeding script
+├── schema.sql            # SQLite database schema definitions
+├── requirements.txt      # Python package dependencies
+├── static/               # Static assets (CSS, JS, Fonts, App Images)
+├── templates/            # Jinja2 HTML templates
+├── screenshots/          # Application screenshots for documentation
+└── docs/                 # Detailed documentation and videos
 ```
 
-## 🛠️ Installation & Setup
+---
 
-### Prerequisites
-- **Python 3.7+**
-- **pip** (Python package manager)
+## 🚀 Setup and Installation
 
-### Step 1: Clone/Download the Project
+Follow these instructions to run the project locally on your machine.
+
+**1. Clone the repository**
 ```bash
+git clone https://github.com/your-username/your-repo.git
 cd py-project
 ```
 
-### Step 2: Install Dependencies
+**2. Set up a virtual environment (Recommended)**
+Isolating dependencies ensures no conflicts with system packages.
+```bash
+python -m venv .venv
+# On macOS/Linux:
+source .venv/bin/activate
+# On Windows:
+.venv\Scripts\activate
+```
+
+**3. Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 3: Setup SQLite Database
-
-Run the setup script:
-
+**4. Initialize the database**
+This script will recreate `food_ordering.db` and insert initial data schemas along with a default admin account.
 ```bash
 python setup_db.py
 ```
 
-This will:
-- Create the `food_ordering.db` SQLite file
-- Create all necessary tables (users, menu_items, orders, order_items)
-- Insert sample users and menu items
-
-### Step 4: Update Database Path (optional)
-
-Edit `config.py` and update the database file path if needed:
-
-```python
-DB_PATH = "food_ordering.db"
-```
-
-## 🚀 Running the Application
-
-### Start the Flask Development Server
+**5. Start the Flask server**
 ```bash
 python app.py
 ```
 
-The application will be available at: **http://localhost:5000**
-
-### Console Output
+**6. Access the application**
+Open your preferred modern web browser and navigate to:
+```text
+http://127.0.0.1:5000
 ```
- * Serving Flask app 'app'
- * Debug mode: on
- * Running on http://127.0.0.1:5000
-```
-
-## 👤 Test Accounts
-
-After running `setup_db.py`, you can login with:
-
-**Regular User:**
-- Username: `john_doe`
-- Password: `password` (register with this password)
-
-**Admin User:**
-- Username: `admin`
-- Password: `password` (register with this password)
-
-## 📖 How to Use
-
-### 1. **Registration**
-   - Click on the "Register" tab
-   - Fill in username, password, and confirm password
-   - Click "Create Account"
-
-### 2. **Login**
-   - Enter your username and password
-   - Click "Login"
-
-### 3. **Browse Menu**
-   - View all available food items
-   - Use search bar to find specific items
-   - Click "Add" to add items to cart
-
-### 4. **Shopping Cart**
-   - Click the cart icon in the top-right
-   - Adjust quantities or remove items
-   - View total price
-   - Click "Checkout" when ready
-
-### 5. **Checkout**
-   - Enter delivery address
-   - Enter phone number
-   - Select payment method
-   - Review order summary
-   - Click "Place Order"
-
-### 6. **View Orders**
-   - Click "My Orders" in navigation
-   - View all your past orders
-   - Click "View Details" to see order items
-
-## 🎨 UI/UX Features
-
-- **Color Scheme**: Modern indigo and orange theme
-- **Responsive Grid**: Cards adapt to screen size
-- **Smooth Animations**: Hover effects and transitions
-- **Icons**: Font Awesome icons throughout
-- **Dark Mode Ready**: Easy to adapt for dark mode
-- **Accessibility**: Semantic HTML and proper ARIA labels
-
-## 🔌 API Endpoints
-
-### Authentication
-- `POST /login` - User login
-- `POST /register` - User registration
-- `GET /logout` - User logout
-
-### Menu & Items
-- `GET /api/menu` - Get all menu items
-- `GET /api/search?q=query` - Search menu items
-
-### Cart
-- `GET /api/cart` - Get cart contents
-- `POST /api/cart/add` - Add item to cart
-- `PUT /api/cart/update/<id>` - Update item quantity
-- `DELETE /api/cart/remove/<id>` - Remove item
-- `POST /api/cart/clear` - Clear entire cart
-
-### Orders
-- `POST /api/place-order` - Place new order
-- `GET /api/orders` - Get user's orders
-- `GET /api/order-details/<id>` - Get order details
-
-## 🛡️ Security Features
-
-- ✅ **Password Hashing**: Using Werkzeug security
-- ✅ **Session Management**: Flask sessions for user authentication
-- ✅ **SQL Injection Prevention**: Parameterized queries
-- ✅ **CSRF Protection**: Can be enhanced with Flask-WTF
-- ✅ **User Authorization**: Orders are tied to authenticated users
-
-## 🐛 Troubleshooting
-
-### "ModuleNotFoundError: No module named 'flask'"
-```bash
-pip install -r requirements.txt
-```
-
-### "MySQL Connection Error"
-- Ensure MySQL is running
-- Check database credentials in `config.py`
-- Run `python setup_db.py` to create database
-
-### "Port 5000 already in use"
-Edit `app.py` and change the port:
-```python
-app.run(debug=True, host='localhost', port=5001)
-```
-
-### "Cart not saving"
-- Clear browser cookies/localStorage
-- Check browser console for JavaScript errors
-- Verify Flask is running
-
-## 📱 Browser Compatibility
-
-- ✅ Chrome/Edge (Latest)
-- ✅ Firefox (Latest)
-- ✅ Safari (Latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🚀 Deployment
-
-### For Production:
-
-1. **Disable Debug Mode**
-   ```python
-   app.run(debug=False)
-   ```
-
-2. **Use Production Server** (Gunicorn)
-   ```bash
-   pip install gunicorn
-   gunicorn -w 4 -b 0.0.0.0:5000 app:app
-   ```
-
-3. **Set Strong Secret Key**
-   ```python
-   app.secret_key = 'your-long-random-secret-key'
-   ```
-
-4. **Use Environment Variables**
-   - Store database credentials in `.env` file
-   - Load using python-dotenv
-
-5. **Enable HTTPS/SSL**
-   - Use Nginx reverse proxy
-   - Get SSL certificate from Let's Encrypt
-
-## 📝 Future Enhancements
-
-- [ ] Admin dashboard for managing orders
-- [ ] User profile management
-- [ ] Real-time order tracking
-- [ ] Payment gateway integration
-- [ ] Email notifications
-- [ ] Review and ratings system
-- [ ] Discount codes and promotions
-- [ ] Multiple delivery address support
-- [ ] Order cancellation
-- [ ] Dark mode support
-
-## 📞 Support
-
-For issues or questions, check:
-- Flask Documentation: https://flask.palletsprojects.com/
-- MySQL Documentation: https://dev.mysql.com/doc/
-- Bootstrap Documentation: https://getbootstrap.com/docs/
-
-## 📄 License
-
-This project is open source and available for educational purposes.
-
-## 🎓 Credits
-
-Original Tkinter version | Converted to Flask web application
 
 ---
 
-**Enjoy using FoodHub! 🍕🍔🍜**
-
-
-1. **Install MySQL & Start Server:**
-   Ensure MySQL (e.g., via XAMPP or MySQL Workbench) is installed and the service is running on your machine (default port 3306).
-
-2. **Setup the Database:**
-   - Open your MySQL CLI or Workbench.
-   - Copy the contents of `schema.sql`.
-   - Execute the SQL script. This will create the `food_ordering_db` database, tables, and insert sample food items and a default admin user.
-
-3. **Configure Database Connection:**
-   - Open `config.py`.
-   - Update `DB_USER` and `DB_PASSWORD` if your local MySQL root user has a password. By default, it uses `root` with no password.
-
-4. **Install Python Dependencies:**
-   - Open your terminal or command prompt in the project folder.
-   - Run the following command:
-     ```bash
-     pip install -r requirements.txt
-     ```
-     *(This installs `mysql-connector-python` and `Pillow` for images).*
-
-5. **Run the Application:**
-   - In the terminal, execute:
-     ```bash
-     python main.py
-     ```
-   - **Login Credentials:**
-     - You can register a new user from the GUI.
-     - Default Admin: Username `admin`, Password `admin123`
+## ⚠️ Important Deployment Notes
+- **Admin Access:** The default admin credentials generated by `setup_db.py` are Username: `admin`, Password: `admin123`.
+- **Environment Safety:** Keep `.env` files, `.venv`, and `food_ordering.db` outside of version control (as configured in `.gitignore`).
+- **Production Mode:** Before deploying to a live web server (like PythonAnywhere, Heroku, or AWS), edit `app.py` or use environment variables to change the `app.secret_key` to a strong, randomized cryptographic string.
 
 ---
-
-## Frequently Asked Questions (Viva Questions)
-
-**Q1: What is the purpose of `__init__` in your classes?**
-**Answer:** The `__init__` method is a constructor. It initializes the class attributes when an object is created. For example, in `LoginWindow`, it sets up the root window dimensions, colors, and the initial database connection.
-
-**Q2: How does the application connect to the database?**
-**Answer:** It uses the `mysql.connector` library. In `db.py`, the `Database` class establishes a connection using the `host`, `user`, `password`, and `database` name provided in `config.py`. It creates a `cursor` to execute SQL queries.
-
-**Q3: Explain the use of `try...except` blocks in `db.py`.**
-**Answer:** `try...except` blocks handle runtime errors gracefully. If the database server is down or a SQL syntax error occurs, the `except mysql.connector.Error` block catches the exception and prevents the application from crashing abruptly, often showing a messagebox to the user instead.
-
-**Q4: What is a `Treeview` widget?**
-**Answer:** `ttk.Treeview` is a Tkinter widget used to display data in a tabular format with rows and columns. In this project, it is used for the Shopping Cart and the Order History tables.
-
-**Q5: How is data passed between different windows?**
-**Answer:** Data is passed via constructor arguments. For example, when `LoginWindow` opens `FoodApp`, it passes the `user_info` dictionary and the active `Database` instance. When `FoodApp` opens `BillingSystem`, it passes the `cart_items` list, `total_amount`, and the `user_id`.
-
-**Q6: What does `bind` do in Tkinter?**
-**Answer:** The `.bind()` method ties an event to a function. For example, `self.tree_orders.bind("<<TreeviewSelect>>", self.on_order_select)` ensures that when a user clicks a row in the Order History table, the `on_order_select` method is automatically called to load that order's details.
-
-**Q7: How is the password stored securely?**
-**Answer:** The password is not stored in plain text. It is hashed using the `hashlib.sha256()` algorithm before saving it to the `users` table. During login, the entered password is hashed again and compared to the database hash.
+*Developed with ❤️ by the team for educational and conceptual demonstration.*
