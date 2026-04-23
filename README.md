@@ -96,7 +96,7 @@ Here is a visual tour of the application's core interfaces and user workflows.
 
 Because visualizing the flow is important, please view the complete application walkthrough video below:
 
-[▶️ Click here to view Project Demo Video](docs/video/demo.mp4)
+[▶️ Click here to view Project Demo Video](screenshots/demo_video.mp4)
 
 ---
 
