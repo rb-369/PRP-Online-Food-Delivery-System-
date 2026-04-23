@@ -1,5 +1,5 @@
 """
-Password Hash Generator for FoodHub
+Password Hash Generator for FoodHub Project
 This script helps create proper password hashes for test users
 """
 
